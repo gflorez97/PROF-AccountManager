@@ -26,7 +26,7 @@ public class Customer {
 		for (Order order: orders) {
 			if (!order.wasProcessed()) {
 				if (order.isValid()) {
-					if(checkOrderAttributes(order)) {
+					if(Util.checkOrderAttributes(order)) {
 						total += order.getAmount();
 						order.setProcessed();	
 					} else {
