@@ -14,10 +14,10 @@ public class Customer {
 	private Vector <Order> orders;
 	
 	// When the customer is created, all orders are stored in the orders vector (object aggregation)
-	Customer(int id, Double balance, Vector<Order> orders) {
-		this.id = id;
-		this.balance = balance;
-		this.orders = orders;
+	Customer() {
+//		this.id = id;
+//		this.balance = balance;
+//		this.orders = orders;
 	}
 
 	public void updateBalance() {
@@ -54,6 +54,19 @@ public class Customer {
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id2) {
+		this.id = id;
+	}
+
+	public void setBalance(double balance2) {
+		this.balance = balance2;
+		
+	}
+
+	public void setOrders(Vector<Order> orders2) {
+		this.orders = orders2;		
 	}
 	
 }

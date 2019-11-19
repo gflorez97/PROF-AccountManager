@@ -13,7 +13,9 @@ public class CustomerTest {
 		double BALANCE = 200.0;
 		Vector<Order> VECTOR = null;
 		
-		Customer customer = new Customer(ID, BALANCE, VECTOR);
+		//Customer customer = new Customer(ID, BALANCE, VECTOR);
+		Customer customer = new Customer();
+		
 		
 		//Si no existiera un getter del id, no podría hacerse la prueba
 		assertEquals(ID, customer.getId());

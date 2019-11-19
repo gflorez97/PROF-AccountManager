@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
-final public class DataAccessSingleton {
-	private static Vector <Customer> customers;
+public class DataAccessSingleton {
+	static Vector <Customer> customers;
 	private static DataAccessSingleton instance;
 
 	// Singleton access method
@@ -20,13 +20,11 @@ final public class DataAccessSingleton {
 		}	
 	}
 
-	private DataAccessSingleton() {
-		try {
-			customers = DataAccessSingleton.databaseLoader();
-		} catch (Exception e) {
-			// Recovery code. Do not care about it.					
-			e.printStackTrace();
-		}
+	DataAccessSingleton() {
+		/*
+		 * try { customers = DataAccessSingleton.databaseLoader(); } catch (Exception e)
+		 * { // Recovery code. Do not care about it. e.printStackTrace(); }
+		 */
 	}
 
 	// Returns a customer by id
@@ -83,7 +81,10 @@ final public class DataAccessSingleton {
 
 				}
 				
-				customer = new Customer(id, balance, orders);
+				customer = new Customer();
+				customer.setId(id);
+				customer.setBalance(balance);
+				customer.setOrders(orders);
 				customers.add(customer);
 
 			}
